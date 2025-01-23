@@ -1,0 +1,12 @@
+Bipra Dey
+
+CISC 3300 F24 
+In class assignment 3 
+1. Elements with __semantic__ meaning are intended to convey meaning by their element type, even if the element is indistinguishable from other elements visually. 
+2. __Block__ level elements always starts on a new line 
+3. __Anchor_ defines a hyperlink, which is used to link from one page to another. 
+4. Image files can be accessed __relative__ to the HTML file. 
+5. The _compression_ algorithm for a PNG file is lossless. 
+6. The _form_ element gives you a set of input elements to collect data from your users. 
+7. Create an HTML page that has a table. It should have at least 3 rows and 3 columns with some kind of data. The first row should have table headers. 
+Please create a directory called in-class-3 in your local repository, include a .txt file with the answers for questions 1-6 and an .html file for question 7 on submission.
