@@ -1,0 +1,43 @@
+Bipra Dey 
+
+CISC 3300 SP24 
+Homework 1 
+1. What is HTML? What does it do? 
+	
+HTML stands for Hyper Text Markup Language. HTML is a set of rules that describes how the layout and presentation of text and images should appear in a digital document.
+
+2. Access https://www.fordham.edu/. In your own words, describe how this webpage uses structure to convey meaning and navigation options to the user. 
+
+The top of the page contains a navigation bar with the university’s name along with links to various pages on the Fordham webpage such as Academics or Athletics. 
+The user can also hover over the links to produce a dropdown that displays sub-links for each webpage that the user can navigate to. 
+These links are anchor tags with hrefs. There is a search bar that uses a search icon to make it stand out and allows the user to search the webpage for a specific term. 
+There is a large banner image of the NYC skyline that is used to convey the location of Fordham University. 
+Additionally, there are multiple images or videos next to or above links to articles in order to encourage users to read the news related to Fordham University. 
+There is a calendar on the page which highlights the university’s events that can be scrolled or clicked through using arrow buttons. 
+There is a bottom footer with helpful links along with icon links to the university’s social media. 
+Lastly, there is a navigation button that appears as you scroll from the top of the page that takes you to the top of the page regardless of where you are within the page.
+
+3. What is an HTML element? Tag? Attribute? 
+
+An HTML element is a collection of start and end tags with the content inserted between them. 
+Tags are the part of the markup language that act like containers that provide instructions to the browser on how to layout and present the content within the tags. 
+Attributes provide additional information about the contents of an element and they appear in the opening tag of an HTML element. Attributes are made up of a name and a value. 
+
+4. What does it mean when an element has semantic meaning? And structural meaning? 
+
+An element with semantic meaning provides extra information to the browser to describe its purpose within the layout and presentation of the page. 
+An element with structural meaning provides instructions on the organization of content within the webpage. 
+
+5. What is the default behavior when submitting a HTML form? 
+
+The default behavior when submitting an HTML form is a get request which causes a page reload.
+
+6. Create a webpage for a fake business of your choosing. It should have: a. an h1 element with the title of the business 
+b. a p element with a description of the business 
+c. a subsection with a sub heading and p element describing that section d. create an images directory and put a relevant image in the directory, include that image on the webpage via a src attribute with a relative path. 
+e. a contact form which should have: 
+i. a text input element for first name with a label 
+ii. a text input element for last name with a label 
+iii. an email element with a label 
+iv. a submit element with a value of “Submit” 
+Please create a directory called homework-1 in your local repository, include a .txt file with the answers for questions 1-5 and an .html file for question 6 on submission.
