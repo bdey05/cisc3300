@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Homework-2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Ledger&display=swap" rel="stylesheet">
+    <style>
+      * {
+        font-family: "Lato", serif;
+        padding: 0;
+        margin: 0;
+        color: #191919;
+      }
+      body {
+        background-color: #dcccbb;
+        overflow-x: hidden;
+      }
+      #sectiontitle {
+        font-size: 52px;
+        padding-left: 50px;
+        padding-top: 50px;
+      }
+      #description {
+        padding: 50px;
+        padding-top: 25px;
+        font-size: 24px;
+        line-height: 1.3;
+      }
+      #subsection h2 {
+        font-size: 38px;
+        padding-left: 50px;
+        padding-top: 0px;
+      }
+      #subsection p {
+        font-size: 21px;
+        padding: 50px;
+        padding-top: 25px;
+        padding-right: 0px;
+        line-height: 1.3;
+      }
+      #subsection {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 20px;
+      }
+      #information {
+        width: 60%;
+      }
+      #image {
+        width: 40%;
+      }
+      img {
+        width: 100%;
+        height: 400px;
+      }
+
+      #contactform {
+        padding: 50px;
+        padding-top: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+      }
+
+      #contactform h2 {
+        font-size: 38px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        padding-top: 15px;
+      }
+
+      input {
+        width: 90%;
+        font-size: 18px;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 10px;
+        border: none;
+      }
+      form div {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+      label {
+        width: 10%;
+        font-size: 18px;
+      }
+      #submit {
+        cursor: pointer;
+        margin: 30px;
+        width: 25%;
+        background-color: #aabd8c;
+      }
+      
+      #header {
+        background-color: #de938e;
+        border-bottom: 1px solid black;
+        padding: 20px;
+        padding-left: 50px;
+        width: 100%;
+      }
+      #logo, #links, #links li {
+        display: inline-block;
+      }
+      #logo a {
+        font-family: "Ledger", serif;
+        font-size: 62px;
+        color: #CED0CE;
+      }
+
+      #links {
+        text-align: center;
+        width: 90%;
+      }
+      #links li {
+        margin: 10px;
+        font-size: 22px;
+      }
+      
+      a {
+        text-decoration: none;
+
+      }
+
+      #links li a:hover {
+        text-decoration: underline;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="content">
+    <div id="header">
+        <h1 id="logo"><a href="#">AS</a></h1>
+        <ul id="links">
+            <li><a href="#"">About</a></li>
+            <li><a href="#"">Products</a></li>
+            <li><a href="#"">Resources</a></li>
+            <li><a href="#"">Partners</a></li>
+        </ul>
+    </div>
+    <h1 id="sectiontitle">Aegisense</h1>
+    <p id="description">
+      Aegisense is a cybersecurity firm that provides state-of-the-art AI
+      solutions to safeguard and empower any business with an online footprint.
+      From protecting sensitive data to proactively detecting and mitigating
+      cyber attacks, our extensive suite of services ensures that organizations
+      are always one step ahead in the evolving threat landscape. Trusted by
+      enterprises across various industries, from finance to healthcare,
+      Aegisense combines innovation and expertise to deliver 24/7 protection in
+      an increasingly digital world. Aegisense ensures that companies are
+      secure, allowing them to focus and deliver on their business goals.
+    </p>
+    <section id="subsection">
+      <div id="information">
+        <h2>Services Offered</h2>
+        <p>
+          Aegisense services include threat detection and response, identity and
+          access management, application security, endpoint security, cloud
+          security, and network security, ensuring seamless protection across a
+          company's infrastructure. Aegisense also offers governance, risk,
+          compliance solutions, managed security services, and proactive threat
+          intelligence to keep companies ahead of developing cyber threats.
+        </p>
+      </div>
+      <div id="image">
+        <img src="images/cybersecurity.svg" alt="Cybersecurity Graphic" />
+      </div>
+    </section>
+    <div id="contactform">
+      <h2>Contact Us</h2>
+      <form id="contact">
+        <div id="fnameline">
+          <label for="fnameinput">First Name</label>
+          <input type="text" name="fname" id="fnameinput" required />
+        </div>
+        <div id="lnameline">
+          <label for="lnameinput">Last Name</label>
+          <input type="text" name="lname" id="lnameinput" required />
+        </div>
+        <div id="emailline">
+          <label for="emailinput">Email Address</label>
+          <input type="email" name="email" id="emailinput" required />
+        </div>
+        <input id="submit" type="submit" name="submit" value="Submit" />
+      </form>
+    </div>
+      <script>
+        document
+          .getElementById("contact")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+            const contactData = new FormData(document.getElementById("contact"));
+            contactData.values().forEach((value) => console.log(value));
+            alert("Form submitted successfully!");
+          });
+      </script>
+    </div>
+  </body>
+</html>

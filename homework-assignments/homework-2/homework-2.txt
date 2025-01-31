@@ -1,0 +1,44 @@
+Bipra Dey
+
+CISC 3300 SP25 
+Homework 2 
+
+1. What do the id and class attributes do? How are they alike and different? 
+The id attribute is used to assign a unique id to a single HTML element. 
+The class attribute is used to assign a class for one or many HTML elements. 
+The id and class attributes can both be targeted by their name when styling the element(s) using CSS or they can be used by JavaScript to manipulate the element(s). 
+However, the value of the id attribute must be unique within the HTML document while multiple elements in the same HTML file can have the same class value.
+
+2. What are the parts of a CSS rule? 
+	
+A CSS rule contains a selector and a declaration. 
+The selector is used to choose which HTML elements you want to style. 
+The declaration is made up of a property and value and it applies a visual effect to the selected element. 
+
+3. Explain how CSS rules cascade. 
+
+The CSS rules for cascading take effect when two or more rules apply to the same element. 
+The “!important” keyword has the highest precedence. 
+Then, there is specificity which means the CSS rule that has the highest specificity (the selector with the higher priority) will have its style declaration applied to the targeted HTML element.
+Next, there is inheritance which means that a child element will inherit style properties from its parent element.
+Lastly, there is the “last rule” which states that if there are two or more CSS rules on the same element, the rule applied last will be the one actually applied. 
+
+4. Contrast display: block, inline, inline-block. 
+
+Elements with block display (such as the <h1> and <p> elements) always appear on a new line.
+Elements with inline display (such as the <b> and <img> elements) reside within a block level element and do not take up a new line.
+Inline elements continue on the same line as neighboring elements.
+Elements with inline-block display behave like inline elements in that they appear on the same line as neighboring elements.
+However, they share the rest of their behavior with block level elements as you can set the height and width properties on the element.
+
+5. What are border, padding, and margin? 
+
+The border is the line that surrounds the edge of the element’s box.
+The margin is the space around the element’s box and it sits outside of the border.
+The padding is the space between the border of the element’s box and the content that is within the box.
+
+6. Let’s improve our fake business webpage from the first homework: 
+a. Make a full width header div with a centered row of links and a border. The links can route to ‘#’. Give the header a background color and the links a foreground color. 
+b. Create a logo with a fancy font from google fonts and some color. And set a google font for the text of the rest of your webpage. 
+c. Every item on the page should have adequate margin/padding. 
+d. Try to think about the usability principles we have discussed in class; try to make the design choices increase the usability of the page.
