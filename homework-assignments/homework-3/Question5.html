@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Homework 3 Question 5</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Raleway", serif;
+    }
+
+    #container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        padding: 2%;
+        gap: 45%;
+    }
+
+    #leftsidebar {
+        border-right: 1px solid #e7ebe7;
+        padding-right: 3%;
+        padding-top: 30px;
+    }
+    #leftsidebar p {
+        color: #900028;
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    #links {
+        display: flex;
+        flex-direction: column;
+        background-color: #e9e9e9;
+        border-left: 1px solid #900028;
+        padding: 10px;
+        margin-bottom: 35px;
+    }
+    #links a {
+        text-decoration: none;
+        font-size: 14px;
+        color: #333;
+        margin: 5px;
+    }
+    #links a:hover {
+        text-decoration: underline;
+        color: #6e6e6e;
+    }
+    button {
+        background-color: #900028;
+        padding: 25px 40px 25px 40px;
+        border-radius: 2px;
+        border: none;
+        transition: background-color 0.4s ease-in-out;
+        cursor: pointer
+    }
+
+    button a {
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    button:hover {
+        background-color: #b90136;
+        
+    }
+
+   
+
+  </style>
+  <body>
+    <div id="container">
+      <div id="leftsidebar">
+        <p>Majors and Minors</p>
+        <div id="links">
+            <a href="https://www.fordham.edu/undergraduate-admission/majors-and-minors/whats-your-passion/">What's Your Passion?</a>
+            <a href="https://www.fordham.edu/undergraduate-admission/majors-and-minors/accelerated-degree-programs/">Accelerated Degree Programs</a>
+        </div>
+        <button><a href="https://www.fordham.edu/undergraduate-admission/majors-and-minors/">Majors and Minors</a></button>
+      </div>
+      <div id="maincontent">Main Content</div>
+    </div>
+  </body>
+</html>

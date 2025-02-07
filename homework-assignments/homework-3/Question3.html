@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Homework 3 Question 3</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #responsive {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #item {
+      background-color: rgb(196, 115, 142);
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      padding: 10px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 500px) {
+      #responsive {
+        flex-direction: column;
+      }
+    }
+
+    @media (min-width: 500px) {
+      #responsive {
+        flex-direction: row;
+      }
+    }
+  </style>
+  <body>
+    <div id="responsive">
+      <div id="item">Item 1</div>
+      <div id="item">Item 2</div>
+      <div id="item">Item 3</div>
+    </div>
+  </body>
+</html>
