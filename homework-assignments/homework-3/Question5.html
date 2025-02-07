@@ -17,17 +17,17 @@
 
     #container {
         display: flex;
-        align-items: center;
         justify-content: center;
         text-align: left;
         padding: 2%;
-        gap: 45%;
+        gap: 5%;
     }
 
     #leftsidebar {
         border-right: 1px solid #e7ebe7;
         padding-right: 3%;
         padding-top: 30px;
+        
     }
     #leftsidebar p {
         color: #900028;
@@ -73,8 +73,50 @@
         background-color: #b90136;
         
     }
+    #breadcrumbs {
+      padding-top: 30px;
+      display: flex;
+      margin-bottom: 30px;
+    }
 
-   
+    #breadcrumbs a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    #breadcrumbs a:hover {
+      text-decoration: underline;
+    }
+
+    #breadcrumbs p:not(:first-child)::before{
+      content: "/";
+      color: #b0bcb0;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    #maincontent h1{
+      font-weight: 300;
+      font-size: 50px;
+      color: #900028;
+      margin-bottom: 30px;
+    }
+    #information p {
+      line-height: 1.6;
+      margin-bottom: 25px;
+    
+    }
+    #information p a {
+      color: #900028;
+      text-decoration: none;
+      border-bottom: 1px solid #900028;
+    }
+
+    #main {
+      font-size: 20px;
+      width: 800px;
+    }
+
+    
 
   </style>
   <body>
@@ -87,7 +129,24 @@
         </div>
         <button><a href="https://www.fordham.edu/undergraduate-admission/majors-and-minors/">Majors and Minors</a></button>
       </div>
-      <div id="maincontent">Main Content</div>
+      <div id="maincontent">
+        <nav id="breadcrumbs">
+          <p><a href="#">Home</a></p>
+          <p><a href="#">Admissions and Aid</a></p>
+          <p><a href="#">Undergraduate Admission</a></p>
+          <p><a href="#">Majors and Minors</a></p>
+          <p><a href="#">Computer Science</a></p>
+        </nav>
+        <h1>Computer Science</h1>
+        <div id="information">
+          <p>Degree Options: Major, Minor <br />
+            Locations: Lincoln Center, Rose Hill <br />
+            Visit the <a href="#">Computer and Information Science Department</a></p>
+          <p id="main">
+            Wherever there’s a computer, there’s a skilled person developing, maintaining, hacking, advancing or simply using it. Be that person.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
