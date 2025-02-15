@@ -1,0 +1,48 @@
+Bipra Dey
+
+CISC 3300 S25 
+Homework 4 
+
+1. How does an interpreted programming language differ from a compiled language? 
+In an interpreted programming language like JavaScript, the source code is not compiled directly by the target machine. 
+In an interpreted programming language, a separate program called the interpreter reads the code line-by-line during runtime and then executes it. 
+However, a compiled language like C++ involves a compiler translating the code into machine code before the program is executed. 
+Interpreted programming languages are more flexible and the source code is platform independent. 
+Compiled languages are platform dependent and take longer to test as there is additional time required for the compilation step. 
+Despite that, programs created by compiled languages are faster than interpreted code because there is no overhead from the process of translating code at runtime. 
+
+2. Contrast dynamically typed programming languages with statically typed ones. And contrast strongly typed programming languages with weakly typed ones. 
+Dynamically typed programming languages perform type checking at runtime which means that the type of a variable can change over its lifetime. 
+The type is bound to the value whereas in statically typed programming languages, the type is bound to the variable and types are checked at compile time. 
+Strongly typed programming languages involve type discipline that is enforced by the compiler. 
+On the other hand, weakly typed programming languages can recognize different data types like strings but don’t use them strictly and they attempt to convert data when it is reasonable. 
+
+3. What is the difference between var, let, and const when declaring variables in JS? 
+Var is considered the old way of declaring variables in JavaScript. 
+Variables declared with var are redeclarable and are global and function scoped. 
+Variables declared with let are block scoped and redeclarable. 
+Variables declared with const are block scoped and not redeclarable. 
+
+4. What are anonymous functions? Higher order functions? Callback functions? First class functions? 
+An anonymous function is an unnamed function. 
+A higher order function is a function that returns a function or takes other functions as arguments. 
+A callback function is a function that is passed as an argument to another function so it can be called later. 
+A first class function involves functions in a language being treated as variables.   
+
+5. Define objects in JavaScript. 
+Objects in JavaScript are data structures that consist of key-value pairs. 
+
+6. Loop through the cats array variable found here: 
+https://github.com/cisc3300/SP25-lecture-code/blob/main/2-13-lecture/cats.js 
+a. if the cats adoption status is available add that cat’s name to a result array 
+b. create a new sentence about your newly adopted cats from your result array via the join array function. 
+
+7. Create a variable that sets a value via a ternary operator. Use Math.random() * 10, which will output a random number from 1 to 10, to set the variable’s value as a string of “greater than five!” if the output from Math.random() * 10 is greater than 5, and “less than five!” if the output is less than 5. 
+
+8. Loop through the values of the cat object variable found here: 
+https://github.com/cisc3300/SP25-lecture-code/blob/main/2-13-lecture/cats.js. Console.log the value of each property in the loop. 
+
+9. Write two if statements, pick the correct comparison operator to have the first if statement equate an integer of 1 and a string of ‘1’ as true. And pick the correct comparison operator to have the second equate an integer of 1 and a string of ‘1’ as false. 
+
+10. Using the map function create a new array via the cats array used in question 6. Pass the map function a callback function that accepts each element of the array as a parameter. Return the value of the name property of each object in the cats array concatenated with the string “ is cute!”. The output should be an array of “Charlie is cute!”, “Lily is cute!”, etc. 
+Include questions 6-10 in a single JavaScript file or HTML file via a script tag.
