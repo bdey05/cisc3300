@@ -59,4 +59,4 @@ const cats = [
 
 const cat = {name:"Pinecone", age:13, type:'Munchkin', cuteness: 9001};
 
-export {cats}
+export {cat, cats}

@@ -1,4 +1,4 @@
-import { cats } from "./cats.js";
+import { cat as catObj, cats } from "./cats.js";
 
 let question6 = () => {
   let result = cats
@@ -14,11 +14,9 @@ let question7 = () => {
 };
 
 let question8 = () => {
-  cats.forEach((cat) =>
-    console.log(
-      `The cat named ${cat.name} is ${cat.adoptionStatus} for adoption.`
-    )
-  );
+  for (let property in catObj){
+    console.log(`The value of the property ${property} is ${catObj[property]}`);
+  }
 };
 
 let question9 = () => {
