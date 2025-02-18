@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>In-Class-10</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #changing-div {
+            margin: 20px;
+            padding: 30px;
+            background-color: beige;
+            font-size: 32px;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="changing-div">
+        initial text 
+    </div>
+    <script>
+        document.getElementById("changing-div").addEventListener("click", (e)=>{
+            e.target.innerText = "added text!";
+            e.target.style.backgroundColor = "lightcoral";
+            
+        });
+    </script>
+  </body>
+</html>
