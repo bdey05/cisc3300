@@ -7,5 +7,5 @@ In class assignment 11
 3. AJAX allows web pages to be updated asynchronously by exchanging data with a web server behind the scenes. 
 4. HTTP how the internet handles communication between clients and servers, is done by requests and responses. 
 5. JSON is a text-based data format following JavaScript object syntax. 
-6. Cross-Origin Resource Sharing (CORS) is a way for two or more computer programs or components to communicate with each other. 
+6. API is a way for two or more computer programs or components to communicate with each other. 
 7. Create a webpage that (using jQuery) when a button is clicked an HTTP GET request is sent to a PHP backend. From the PHP backend return an associative array that is JSON encoded. Console.log the response on the front end.
