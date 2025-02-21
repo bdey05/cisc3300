@@ -1,0 +1,75 @@
+Bipra Dey
+
+CISC 3300 S25 
+Homework 5 
+
+1. What is the DOM? What is meant by the DOM tree? 
+
+The Document Object Model (DOM) is an Application Programming Interface (API) for web documents that represents the document as nodes and objects so that programming languages can change the page structure, style, and content. 
+The DOM tree is the model of the webpage that the browser creates after it loads that page. The model is stored in the browser’s memory and has 4 main node types (document node, element nodes, attribute nodes, and text nodes). 
+
+2. What is an XSS attack? How do they work? How can you guard against them? 
+
+A Cross-Site Scripting Attack (XSS attack) involves a website that has a security vulnerability that allows a threat actor to inject malicious code into the website and then compromise a user’s account. 
+An XSS attack works by a threat actor injecting harmful code into a website through something like a form input and then that code is executed in the browser of other users that visit the website, allowing the threat actor to access sensitive information from users. 
+In order to guard against XSS attacks, you have to be careful with the content that is treated as HTML and rarely offer the option to show user input. 
+Additionally, you can validate user input by filtering it of any potential malicious techniques such as extra tags or running the input against a whitelist of allowed characters.
+
+3. What is an event in JavaScript? What kind of events can you respond to with code?
+
+A JavaScript event is a “thing” that happens to an HTML element. 
+User interactions create events and these events are fired by the browser/html which can then trigger code. 
+You can respond to UI (e.g. load/unload), keyboard (e.g. keydown, keyup), mouse (e.g. click, mouseout), focus, form (e.g. submit), and mutation events (e.g. node insertion). 
+
+4. How does a DOM eventListener work? What are the parameters it is expecting? 
+
+A DOM event listener allows programmers to execute a function when a specific event occurs on the document. 
+A DOM event listener expects an event type parameter and a listener parameter that is a function that responds to an event and has access to the Event object.
+
+5. What is jQuery? Why use it? How do we load jQuery onto a page? 
+
+jQuery is a lightweight JavaScript library that allows you to accomplish common JavaScript tasks in a few lines of code. 
+Developers should use jQuery as it simplifies HTML, DOM manipulation, event handling, CSS animations, and Ajax. 
+
+6. What is AJAX? JSON? The HTTP method types and what they do? 
+
+AJAX (Asynchronous JavaScript and XML) allows web pages to be updated asynchronously by exchanging data with a web server. 
+Browsers have a built-in XMLHttpRequest object to enable asynchronous requests that do not require a page reload. 
+JSON (JavaScript Object Notation) is a text-based data format, following JavaScript object syntax, that stores and transmits data objects made up of name-value pairs and arrays. 
+The HTTP method types are as follows: GET (requests and receives the specified data from the server), POST (submits an entity to the server and often causes a change in state or side effects on the server), 
+PUT (replaces all current representations of the target resource with the request content), PATCH (applies partial modifications to a resource), and DELETE (deletes the specified resource).
+
+7. Write some data in the JSON format. You can use this site https://jsonformatter.org/ to check if it’s in the right format, making use of the “validate” button. 
+{
+  "tools": [
+    {
+      "Name": "Real-time Cloud Protection",
+      "MonthlyPrice": 300
+    },
+    {
+      "Name": "AI-based Email Security",
+      "MonthlyPrice": 250
+    },
+    {
+      "Name": "Network Detection and Response",
+      "MonthlyPrice": 500
+    },
+    {
+      "Name": "Endpoint Protection",
+      "MonthlyPrice": 750
+    },
+    {
+      "Name": "Identity Threat Detection and Response",
+      "MonthlyPrice": 900
+    }
+  ]
+}
+
+8. Create a webpage that contains an unordered list element which contains several list item elements. 
+If a list item is clicked, change the color of it. Each list item should have a different color. 
+9. Create a webpage that contains a button. Write jQuery code so that when the button is clicked an HTTP GET request is sent to a PHP backend. 
+From the PHP backend(reference the php-project code found here: https://github.com/cisc3300/SP25-lecture-code/tree/main/2-20-lecture) return a json encoded associative array of data pertaining to your fake business. 
+Make sure that it has at least a name and a price. Use the response returned on the frontend to create a div element for each piece of data, show the name and price of each item and give the elements some style. 
+10. Create a webpage that contains a form element with some input elements. Write jQuery code so that when the form is submitted an HTTP POST request is sent to a PHP backend. 
+From the PHP backend(reference the php-project code found here: https://github.com/cisc3300/SP25-lecture-code/tree/main/2-20-lecture) return an associative array with data for a success message that is JSON encoded. 
+Use the response to create an HTML element that contains the message data, give it some proper styling.

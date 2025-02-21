@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homework 5 Question 8</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #elements {
+            font-size: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #elements li {
+            margin: 10px;
+            cursor: pointer;
+        }
+
+    </style>
+  </head>
+  <body>
+    <ul id="elements">
+        <li id="item1">Item 1</li>
+        <li id="item2">Item 2</li>
+        <li id="item3">Item 3</li>
+        <li id="item4">Item 4</li>
+        <li id="item5">Item 5</li>
+    </ul>
+    <script>
+        $(()=> {
+            const colors = ['red', 'blue', 'green', 'yellow', 'orange'];
+            $('#item1').click(function() {
+                $(this).css('color', colors[0]);
+            })
+            $('#item2').click(function() {
+                $(this).css('color', colors[1]);
+            })
+            $('#item3').click(function() {
+                $(this).css('color', colors[2]);
+            })
+            $('#item4').click(function() {
+                $(this).css('color', colors[3]);
+            })
+            $('#item5').click(function() {
+                $(this).css('color', colors[4]);
+            })
+        })
+    </script>
+  </body>
+</html>
