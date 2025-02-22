@@ -37,7 +37,7 @@ if ($uriArray[1] === 'products' && $_SERVER['REQUEST_METHOD'] === 'GET') {
 
 if ($uriArray[1] === 'form' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     echo json_encode([
-        'message' => 'Success'
+        'message' => 'Message Successfully Sent. We received your message and we will get back to you within 48-72 hours.'
     ]);
     exit();
 }

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homework 5 Question 10</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #contactform {
+        padding: 50px;
+        padding-top: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+      }
+
+      h2 {
+        font-size: 38px;
+        margin: 50px;
+        margin-bottom: 25px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        padding-top: 15px;
+      }
+
+      input {
+        width: 90%;
+        font-size: 18px;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 10px;
+        border: 1px solid black;
+      }
+      textarea {
+        width: 90%;
+        font-size: 18px;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 10px;
+        border: 1px solid black;
+        height: 100px;
+        resize: none;
+      }
+      form div {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+      label {
+        width: 7%;
+        font-size: 18px;
+      }
+      #submit {
+        cursor: pointer;
+        margin: 30px;
+        width: 25%;
+        background-color: #aabd8c;
+      }
+
+      #success {
+        font-size: 32px;
+        color: rgb(10, 158, 10);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h2>Contact Us</h2>
+      <form id="contactform">
+        <div class="formgroup">
+          <label for="fname">First Name:</label>
+          <input type="text" id="fname" required />
+        </div>
+        <div class="formgroup">
+          <label for="lname">Last Name:</label>
+          <input type="text" id="lname" required />
+        </div>
+        <div class="formgroup">
+          <label for="email">Email:</label>
+          <input type="text" id="email" required />
+        </div>
+        <div class="formgroup">
+          <label for="message">Message:</label>
+          <textarea id="message" required></textarea>
+        </div>
+        <input id="submit" type="submit" name="submit" value="Submit" />
+        <div id="success"></div>
+      </form>
+    </div>
+    <script>
+      $("#contactform").on("submit", function (e) {
+        e.preventDefault();
+        const fnameInput = $("#fname");
+        const lnameInput = $("#lname");
+        const emailInput = $("#email");
+        const messageInput = $("#message");
+
+        const data = {
+          fname: fnameInput.val(),
+          lname: lnameInput.val(),
+          email: emailInput.val(),
+          message: messageInput.val(),
+        };
+        $.ajax({
+          url: "http://localhost:80/form",
+          type: "POST",
+          data: data,
+          dataType: "json",
+          success: function (data) {
+            console.log(data);
+            $("#success").append(`${data["message"]}`);
+            fnameInput.val("");
+            lnameInput.val("");
+            emailInput.val("");
+            messageInput.val("");
+          },
+          error: function (error) {
+            console.log(error);
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

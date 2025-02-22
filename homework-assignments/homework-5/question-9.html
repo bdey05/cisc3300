@@ -23,6 +23,10 @@
         .item {
             margin: 20px;
             font-size: 32px;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: rgb(100, 138, 207);
         }
 
        
@@ -43,7 +47,7 @@
                         console.log(data);
                         $.each(data, (key, value) => {
                             $('#container').append(`
-                              <div class="item">${value['name']} costs $${value['price']}</div>
+                              <div class="item">${value['name']} costs $${value['price']} monthly</div>
                             `)
                         })
                     }
