@@ -1,0 +1,47 @@
+Bipra Dey
+
+CISC 3300 S25 
+Homework 6 
+
+1. Define hoisting and closures in JS. 
+
+Hoisting occurs during the prepare phase when a script enters a new execution context and is when variables, functions, and arguments are created. 
+Closures are the ability of a function to remember the variables and functions that are declared in its outer scope. 
+Closures enable the ability to achieve encapsulation. In an execution context, the scope is the current execution context's variables object and the variables object for each parent execution context. 
+
+2. What is PHP? What do server side languages do in web development? 
+
+PHP (PHP: Hypertext Preprocessor) is an interpreted programming language that is used to build webpages. 
+PHP is used as a server side scripting language in web development. In web development, server side languages are used to process user input and interact with other servers. 
+Server side languages can validate user-submitted data and requests. These languages can then interact with databases to store submitted data and retrieve requested data.
+
+3. What are some examples of how the PHP and JavaScript programming languages are alike and how they differ? 
+
+Both PHP and JavaScript allow for object-oriented programming. They are both dynamic and weakly typed. 
+They share similar syntax with curly braces and similar operators such as the arithmetic operators. 
+However, although both languages are used in web development, PHP is predominantly used for server side scripting while JavaScript is used on the client side. 
+Many of PHP’s foundational features are based on the procedural paradigm while JavaScript is functional. Also, JavaScript is single-threaded with an event loop whereas PHP is multi-threaded. 
+
+4. Why pick PHP over another server side scripting language like Python or Node? 
+
+PHP has many advantages over other server side scripting languages like Python or Node including its ease of use in content management systems, 
+rapid development due to its ability to be mixed with HTML, cheap usage since it is an open-source technology, and its support for most general basic web application functionality. 
+
+5. Compare and contrast echo and var_dump. 
+
+Both echo and var_dump are used to output information to the screen. However, echo is used to print simple strings and numbers and it cannot print arrays. 
+On the other hand, var_dump is used for debugging as it shows additional information about the variables it prints including type and string length. Var_dump can also recursively print arrays. 
+
+6. Create a new PHP project, in the index.php file create: 
+a. An associative array with keys and values. 
+b. Loop through the array and echo out a string that contains each key and value.
+
+7. Add to question 6: 
+a. Create a function that has: 
+i. a set return type 
+ii. an optional parameter 
+iii. a typed parameter 
+iv. and call your function with values that have the correct data types 
+
+8. Create another PHP project that includes a “resources” directory. In the resources directory create an HTML file that has elements to show an image, also place an image in the resources directory. 
+When the domain is accessed in a browser(localhost), return the HTML page with the working image.
