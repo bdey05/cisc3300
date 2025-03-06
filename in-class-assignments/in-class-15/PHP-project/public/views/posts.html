@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Posts</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <button id="get-posts">Get Posts</button>
+            <div id="posts-container"></div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $("#get-posts").click(function () {
+                    const url = 'http://localhost:80/posts';
+                    $.ajax({
+                        url: url,
+                        type: "GET",
+                        dataType: "json",
+                        success: function (data) {
+                            $('#posts-container').html('')
+                            console.log(data)
+                            $.each( data, function( key, value ) {
+                                $('#posts-container').append(`
+                                   <p>${value['title']} ${value['description']} ${value['body']}</p> `)
+                            });
+                        }
+                    });
+                })
+            })
+        </script>
+    </body>
+</html>
