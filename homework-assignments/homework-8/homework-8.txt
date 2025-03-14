@@ -1,0 +1,46 @@
+Bipra Dey
+
+CISC 3300 S25 
+Homework 8 
+
+1. What are sessions and cookies? What do they do? 
+Sessions are text files that store information about a user and their preferences and interactions on the server. 
+Sessions allow websites to track user-specific data and provide a better user experience as they do not have to re-enter data such as the contents of their shopping cart. 
+Cookies are text files that store user data on the browser/client-side. 
+Cookies have a similar benefit to sessions and can manage sessions through a session id or by storing login credentials and authentication tokens.
+
+2. What is SQL? MySQL? What are relational databases? 
+
+SQL (Structured Query Language) is a query language that allows developers to access and manipulate databases. 
+MySQL is a RBDMS (relational database management system) that stores and manages data while allowing developers to use SQL queries to manipulate the data it stores. 
+Relational databases are a type of database that stores data in the form of tables that consist of rows and columns with the ability for each table to form a relationship with one or more tables in the database based on the purpose of the tables. 
+
+3. What is normalization in SQL? 
+
+SQL normalization is the process of organizing data in a database that involves creating tables and establishing relationships between tables so that data is protected and deduplicated. 
+
+4. What are primary and foreign keys? 
+Primary keys are a column or a group of columns in a relational database table that uniquely identifies and indexes a row in that table. 
+Foreign keys are a column or a group of columns in a relational database table that references the primary key of another table in order to establish a relationship between the two tables. 
+
+5. Write statements to: 
+a. create a new database in phpmyadmin (or use the one from the in class assignment) 
+b. create a notes table, include the following columns: 
+i. id, which should be an integer type, have space for 11 characters, not be nullable, and auto increment, set the id column as the primary key 
+ii. title, which should be an varchar type, have space for 80 characters, and not be nullable 
+iii. description, which should be an text type, not be nullable, and auto increment 
+c. a song table 
+
+
+6. Write statements to 
+a. insert some data 
+b. update some data 
+c. delete some data 
+
+
+7. Write queries to 
+a. select all notes and order them by name in reverse alphabetical order 
+b. select the second note in the table only, assume that you don’t know the ID number of it 
+c. select all notes that have descriptions which contain vowels 
+
+Include SQL statements from questions 5-7 in a sql file in your submission.
