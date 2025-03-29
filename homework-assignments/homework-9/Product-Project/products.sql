@@ -18,4 +18,3 @@ INSERT INTO products(product_name, product_desc, product_price) VALUES
 ("SIEM", "Drive business resilience by monitoring, alerting and reporting on business operations", 300), 
 ("Cloud Security", "Scalable cloud security solution that protects hybrid and multi-cloud environments", 950);
 
-SELECT * FROM products;
