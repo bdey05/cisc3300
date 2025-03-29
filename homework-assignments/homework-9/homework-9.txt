@@ -1,0 +1,32 @@
+Bipra Dey
+
+CISC 3300 S25 
+Homework 9 
+
+1. What are relationships in SQL? Joins? 
+SQL relationships are the established associations between two or more tables which are based on common fields from more than one table and involve primary and foreign keys. 
+Relationships can be one-to-one (for every record in the primary table there is only one record in the foreign table), 
+one-to-many (for every record in the primary table there is one or more record(s) in the foreign table), 
+or many-to-many (for every record in the primary table, there are many related records in the foreign table, and for every record in the foreign table,there are many related records in the primary table). 
+Joins are a method to request data from more than one table. 
+
+2. How do joins and relationships interact? 
+
+Joins are how relationships are implemented and it uses connections between the primary and foreign keys of one or more tables (“join” keyword followed by an “on” keyword) in order to denote a relationship between tables. 
+
+3. What’s a PDO? a DSN? 
+
+A PDO is a PHP Data Object and it is an extension that provides a lightweight interface for accessing databases in PHP. 
+PDO provides a data-access abstraction layer that enables users to write queries and fetch data from a database. 
+A DSN (Data Source Name) allows you to connect to a specific database in PHP and it consists of a DSN prefix, host, port, and dbname. 
+
+4. What are prepared statements? Why do we need them? 
+
+Prepared statements are parameterized statements that can execute repeated queries and these are needed as they can prevent sql injections since the query and data would be sent to the database server separately. 
+
+5. What does an .env file do? 
+
+A .env file is a text file that stores environment variables in key-value pairs that can be used to configure an application without explicitly hardcoding the values into the application code itself. 
+This prevents the leak of sensitive information such as API keys and database credentials.
+
+6. Create a PHP project in an MVC style. It should have the ability to search for a product type(use your fictitious business for inspiration), from a MySQL database, and display it. Add some basic styling.

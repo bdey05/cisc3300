@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Products Search</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body>
+        <div class="container mx-auto m-6">
+            <h2 class="text-3xl mb-3">Search for a Product</h2>
+            <div class="flex text-xl items-center border border-black rounded-md mb-6">
+                <input
+                    id="search-text"
+                    type="text"
+                    class="flex-grow p-4"
+                    placeholder="Product lookup"
+                    aria-label="Product's name"
+                />
+                <button
+                    id="search-button"
+                    type="button"
+                    class="p-4 bg-teal-600 text-white font-semibold cursor-pointer">
+                    Search
+                </button>
+            </div>
+       
+            <div id="products-container" class="mt-8 text-2xl underline"></div>
+       
+        </div>
+        <script>
+            $(document).ready(function () {
+                $("#search-button").click(function () {
+                    const url = $('#search-text').val() ? `http://localhost:80/api/products?name=${$('#search-text').val()}` : `http://localhost:80/api/products`;
+                    $.ajax({
+                        url: url,
+                        type: "GET",
+                        dataType: "json",
+                        success: function (data) {
+                            $('#products-container').html('')
+                            $.each( data, function( key, value ) {
+                                $('#products-container').append(`
+                                    <div class="p-2">
+                                       <a href="/products/${value['product_id']}">${value['product_name']}</a>
+                                    </div>
+                                `)
+                            });
+                        }
+                    });
+                })
+            })
+        </script>
+    </body>
+</html>

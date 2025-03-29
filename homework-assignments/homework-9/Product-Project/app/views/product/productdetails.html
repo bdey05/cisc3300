@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Products</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body>
+
+        <div id="container" class="p-8 text-2xl">
+        </div>
+
+        <script>
+
+            $(document).ready(function () {
+                const urlArray = window.location.pathname.split("/")
+                const id = urlArray[2]
+                $.ajax({
+                    url: `http://localhost:80/api/products/${id}`,
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data) {
+                            $('#container').append(`
+                                <h2 class="text-3xl font-bold underline p-1">Product Details</h2>
+                                <div class="p-1">
+                                    Product Name: ${data?.product_name}
+                                </div>
+                                <div class="p-1">
+                                    Product Description: ${data?.product_desc}
+                                </div>
+                                <div class="p-1">
+                                    Product Price: $${data?.product_price} monthly
+                                </div>
+                            `);
+                        } else {
+                            $('#container').append(`
+                                <h2 class="p-2">Product Not Found</h2>
+                            `);
+                        }
+                    }
+                });
+            })
+        </script>
+
+    </body>
+</html>
