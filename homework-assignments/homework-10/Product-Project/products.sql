@@ -13,9 +13,9 @@ CREATE TABLE products (
     PRIMARY KEY(product_id) 
 );
 
-/*INSERT INTO products(product_name, product_desc, product_price) VALUES 
-("Endpoint Management", "Secure all your enterprise devices under one unified console", 400), 
-("Identity & Access Management", "Simplify user access and fortify security across various applications and services", 700), 
-("SIEM", "Drive business resilience by monitoring, alerting and reporting on business operations", 300), 
-("Cloud Security", "Scalable cloud security solution that protects hybrid and multi-cloud environments", 950);*/
+INSERT INTO products(product_name, product_desc, product_price, product_version) VALUES 
+("Endpoint Management", "Secure all your enterprise devices under one unified console", 400, "2.5.21"), 
+("Identity & Access Management", "Simplify user access and fortify security across various applications and services", 700, "2.4.5"), 
+("SIEM", "Drive business resilience by monitoring, alerting and reporting on business operations", 500, "9.3.1"), 
+("Cloud Security", "Scalable cloud security solution that protects hybrid and multi-cloud environments", 300, "10.100.91");
 

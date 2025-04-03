@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Product</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body> 
+
+    <div class="container mx-auto mt-8 max-w-lg px-4">
+        <h1 class="text-3xl font-semibold mb-6 text-center">Add New Product</h1>
+        <form id="add-product-form" class="p-6 rounded-md border border-gray-300 shadow-sm">
+            <div class="mb-4">
+                <label for="product-name" class="text-lg font-semibold">Product Name</label>
+                <input type="text" id="product-name" name="product_name"
+                       class="w-full mt-2 p-3 border border-black rounded-md"
+                       placeholder="Enter product name" required>
+            </div>
+            <div class="mb-4">
+                <label for="product-desc" class="text-lg font-semibold">Description</label>
+                 <textarea id="product-desc" name="product_desc" rows="5"
+                          class="resize-none w-full mt-2 p-3 border border-black rounded-md"
+                          placeholder="Enter product description" required></textarea>
+            </div>
+
+            <div class="mb-4">
+                <label for="product-price" class="text-lg font-semibold">Price</label>
+                <input type="number" id="product-price" name="product_price" step="0.01" min="0"
+                       class="w-full mt-2 p-3 border border-black rounded-md"
+                       placeholder="e.g., 700" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="product-version" class="text-lg font-semibold">Version</label>
+                <input type="text" id="product-version" name="product_version"
+                       class="w-full mt-2 p-3 border border-black rounded-md"
+                       placeholder="e.g., 1.2.1" required>
+            </div>
+
+            <div id="error-container" class="mb-4 text-md text-red-700">
+            </div>
+
+            <div class="mt-6">
+                <button type="submit" class="w-full cursor-pointer px-6 py-3 bg-emerald-600 text-white text-lg font-semibold rounded-md shadow hover:bg-emerald-800 transition duration-200 ease-in-out">
+                    Save Product
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#add-product-form').on('submit', function (e) {
+                e.preventDefault(); 
+
+                $('#error-container').html('');
+
+                const data = {
+                    product_name: $('#product-name').val(),
+                    product_desc: $('#product-desc').val(),
+                    product_price: $('#product-price').val(),
+                    product_version: $('#product-version').val()
+                };
+
+                $.ajax({
+                    url: 'http://localhost:80/api/products',
+                    type: 'POST',
+                    data: data,
+                    dataType: 'json', 
+                    success: function (response) {
+                        if (response && response.success) {
+                            alert("Product added to database"); 
+                            window.location.replace("/products");
+                        }
+                    },
+                    error: function (data) {
+                        $('#error-container').html('')
+                        for (const property in data.responseJSON) {
+                                $('#error-container').append(`<div>${data.responseJSON[property]}</div>`)
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,45 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Users Validation</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    </head>
-    <body>
-        <div class="container mt-3 w-25">
-            <div class="row">
-                <div class="input-group mb-3">
-                    <input id="search-text" type="text" class="form-control" placeholder="search for a user" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button id="search-button" class="btn btn-primary" type="button" id="button-addon2">Search</button>
-                </div>
-            </div>
-            <div class="row">
-                <div id="users-container"></div>
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View and Search Products</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container mx-auto mt-6 max-w-xl">
+        <h1 class="text-3xl font-semibold mb-4">View and Search Products</h1>
+        <div class="mb-4">
+            <input
+                id="search-input"
+                type="text"
+                class="w-full p-3 border border-black rounded-md"
+                placeholder="Enter name to search product"
+            >
         </div>
-        <script>
-            $(document).ready(function () {
-                $("#search-button").click(function () {
-                    const url = $('#search-text').val() ? `http://localhost:8888/api/users?name=${$('#search-text').val()}` : `http://localhost:8888/api/users`;
-                    $.ajax({
-                        url: url,
-                        type: "GET",
-                        dataType: "json",
-                        success: function (data) {
-                            $('#users-container').html('')
-                            console.log(data)
-                            $.each( data, function( key, value ) {
-                                $('#users-container').append(`
-                                    <div>
-                                       <a href="/users/${value['id']}">${value['name']}</a>
-                                    </div>
-                                `)
-                            });
+        <div id="products-container">
+        </div>
+        <div class="text-center mt-6 mb-8">
+            <a href="/new-product" class="px-6 py-3 bg-lime-600 text-white text-lg font-semibold rounded-md shadow hover:bg-lime-800 transition duration-200 ease-in-out">
+               Add Product
+            </a>
+        </div>
+    </div>
+    
+
+    <script>
+        $(document).ready(function () {
+            let allProducts = []; 
+
+            function renderProducts(productsToRender) {
+                $('#products-container').empty();
+                
+                if (!productsToRender || productsToRender.length === 0) {
+                    $('#products-container').append('<p class="text-amber-900 py-4">No products found.</p>');
+                    return;
+                }
+
+                $.each(productsToRender, function (key, product) {
+                    const productId = product.product_id;
+                    const productName = product.product_name;
+                    const productPrice = parseFloat(product.product_price).toFixed(2);
+
+                    $('#products-container').append(`
+                        <div class="product-item border-b border-gray-300 py-4 flex justify-between items-center">
+                            <div>
+                                <span class="text-xl text-black-900">${productName}</span>
+                                <span class="text-l text-gray-600 ml-2">($${productPrice})</span>
+                            </div>
+                            <div class="space-x-2 flex items-center">
+                                <a href="/products/${productId}"
+                                   class="text-cyan-700 hover:text-cyan-900 text-s p-1">
+                                   View
+                                </a>
+                                <a href="/products/edit/${productId}"
+                                   class="text-yellow-700 hover:text-yellow-900 text-s p-1">
+                                   Edit
+                                </a>
+                                <button
+                                   class="delete-button cursor-pointer text-red-700 hover:text-red-900 text-s p-1"
+                                   data-id="${productId}">
+                                   Delete
+                                </button>
+                            </div>
+                        </div>
+                    `);
+                });
+            }
+
+            function fetchAllProducts() {
+                $.ajax({
+                    url: "http://localhost:80/api/products",
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data && Array.isArray(data)) {
+                            allProducts = data;
+                            renderProducts(allProducts);
+                        } else {
+                           allProducts = [];
+                           renderProducts([]); 
                         }
+                    }
+                });
+            }
+
+            $('#search-input').on('input', function () {
+                const searchTerm = $(this).val().toLowerCase().trim();
+
+                if (searchTerm === '') {
+                    renderProducts(allProducts); 
+                } else {
+                    const filteredProducts = allProducts.filter(function(product) {
+                        return product.product_name.toLowerCase().includes(searchTerm);
                     });
-                })
-            })
-        </script>
-    </body>
+                    renderProducts(filteredProducts);
+                }
+            });
+
+            $('#products-container').on('click', '.delete-button', function () {
+                const productId = $(this).data('id');
+                const productItemDiv = $(this).closest('.product-item'); 
+
+                $.ajax({
+                    url: `http://localhost:80/api/products/${productId}`,
+                    type: "DELETE",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response && response.success) {
+                            productItemDiv.remove();
+                            allProducts = allProducts.filter(p => p.product_id !== productId);
+                            if ($('#products-container').children().length === 0) {
+                                $('#products-container').append('<p class="text-amber-900 py-4">No products found.</p>');
+                            }
+                        } 
+                    }
+                });
+            });
+            fetchAllProducts();
+        });
+    </script>
+
+</body>
 </html>

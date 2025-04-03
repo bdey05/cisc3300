@@ -72,10 +72,10 @@ class ProductController
         exit();
     }
 
-    public function getProductByID($id) {
+    public function getProductByID($product_id) {
         $productModel = new Product();
         header("Content-Type: application/json");
-        $product = $productModel->getProductById($id);
+        $product = $productModel->getProductById($product_id);
         echo json_encode($product);
         exit();
     }
@@ -106,8 +106,8 @@ class ProductController
         exit();
     }
 
-    public function updateProduct($id) {
-        if (!$id) {
+    public function updateProduct($product_id) {
+        if (!$product_id) {
             http_response_code(404);
             exit();
         }
@@ -126,7 +126,7 @@ class ProductController
         $product = new Product();
         $product->updateProduct(
             [
-                'id' => $id,
+                'product_id' => $product_id,
                 'product_name' => $productData['product_name'],
                 'product_desc' => $productData['product_desc'],
                 'product_price' => $productData['product_price'],
@@ -141,8 +141,8 @@ class ProductController
         exit();
     }
 
-    public function deleteProduct($id) {
-        if (!$id) {
+    public function deleteProduct($product_id) {
+        if (!$product_id) {
             http_response_code(404);
             exit();
         }
@@ -150,7 +150,7 @@ class ProductController
         $product = new Product();
         $product->deleteProduct(
             [
-                'id' => $id,
+                'product_id' => $product_id,
             ]
         );
 

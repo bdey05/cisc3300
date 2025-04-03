@@ -16,9 +16,9 @@ class Product extends Model {
         return $this->query($query);
     }
 
-    public function getProductById($id){
-        $query = "select * from products where id = :id";
-        return $this->query($query, ['id' => $id]);
+    public function getProductById($product_id){
+        $query = "select * from products where product_id = :product_id";
+        return $this->query($query, ['product_id' => $product_id]);
     }
 
     public function saveProduct($inputData){
@@ -32,7 +32,7 @@ class Product extends Model {
     }
 
     public function deleteProduct($inputData){
-        $query = "DELETE FROM products where id = :id";
+        $query = "DELETE FROM products where product_id = :product_id";
         return $this->query($query, $inputData);
     }
 }
