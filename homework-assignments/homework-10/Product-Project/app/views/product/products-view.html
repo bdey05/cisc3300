@@ -77,7 +77,7 @@
                     type: "GET",
                     dataType: "json",
                     success: function (data) {
-                        if (data && Array.isArray(data)) {
+                        if (data) {
                             allProducts = data;
                             renderProducts(allProducts);
                         } else {
@@ -110,13 +110,11 @@
                     type: "DELETE",
                     dataType: "json",
                     success: function (response) {
-                        if (response && response.success) {
                             productItemDiv.remove();
                             allProducts = allProducts.filter(p => p.product_id !== productId);
                             if ($('#products-container').children().length === 0) {
                                 $('#products-container').append('<p class="text-amber-900 py-4">No products found.</p>');
                             }
-                        } 
                     }
                 });
             });

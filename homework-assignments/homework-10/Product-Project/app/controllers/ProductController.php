@@ -180,11 +180,6 @@ class ProductController
         exit();
     }
 
-    public function productsDeleteView() {
-        include './app/views/product/products-delete.html';
-        exit();
-    }
-
     public function productsUpdateView() {
         include './app/views/product/products-update.html';
         exit();

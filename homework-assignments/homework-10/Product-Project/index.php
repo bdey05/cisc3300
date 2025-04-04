@@ -62,10 +62,6 @@ if ($uriArray[1] === 'update' && $_SERVER['REQUEST_METHOD'] === 'GET') {
    
 }
 
-if ($uriArray[1] === 'delete-product' && $_SERVER['REQUEST_METHOD'] === 'GET') {
-    $productController = new ProductController();
-    $productController->productsDeleteView();
-}
 
 if ($uriArray[1] === '' && $_SERVER['REQUEST_METHOD'] === 'GET') {
     $productController = new ProductController();

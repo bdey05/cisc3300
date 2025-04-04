@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container mx-auto mt-6 max-w-2xl">
+        <h1 class="text-3xl font-bold mb-6">Product Details</h1>
+
+        <div id="product-details-container" class="p-6 rounded-lg shadow-md">
+        </div>
+
+        <div class="mt-6 text-left">
+             <a href="/products" class="text-slate-500 hover:text-slate-700 text-lg p-2">
+               Back to Products List
+            </a>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            const urlArray = window.location.pathname.split("/")
+            const productId = urlArray[2]; 
+
+            function fetchProductDetails(id) {
+                $.ajax({
+                    url: `/api/products/${id}`, 
+                    type: "GET",
+                    dataType: "json",
+                    success: function (product) {
+                        if (product) {
+                            const productPrice = parseFloat(product[0].product_price).toFixed(2);
+                            $('#product-details-container').html(`
+                                <div class="mb-4">
+                                    <span class="font-semibold text-xl">Name:</span>
+                                    <p class="text-lg">${product[0].product_name}</p>
+                                </div>
+                                <div class="mb-4">
+                                    <span class="font-semibold text-xl">Description:</span>
+                                    <p class="text-lg">${product[0].product_desc}</p>
+                                </div>
+                                <div class="mb-4">
+                                    <span class="font-semibold text-xl">Price:</span>
+                                    <p class="text-lg">$${productPrice}</p>
+                                </div>
+                                <div class="mb-6">
+                                    <span class="font-semibold text-xl">Version:</span>
+                                    <p class="text-lg">${product[0].product_version}</p>
+                                </div>
+                                <div class="text-right">
+                                    <a href="/update/${product[0].product_id}"
+                                       id="edit-button"
+                                       class="px-6 py-3 bg-slate-500 text-white text-lg font-semibold rounded-md shadow hover:bg-slate-700 transition duration-200 ease-in-out">
+                                       Edit Product
+                                    </a>
+                                </div>
+                            `);
+                        } else {
+                            $('#product-details-container').html('<p class="text-amber-900 py-4">Product not found.</p>');
+                        }
+                    },
+                });
+            }
+            fetchProductDetails(productId);
+        });
+    </script>
+
+</body>
+</html>
