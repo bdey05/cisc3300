@@ -115,10 +115,10 @@ class ProductController
         parse_str(file_get_contents('php://input'), $_PUT);
 
         $inputData = [
-            'product_name' => $_POST['product_name'] ?: null,
-            'product_desc' => $_POST['product_desc'] ?: null,
-            'product_price' => $_POST['product_price'] ?: null,
-            'product_version' => $_POST['product_version'] ?: null
+            'product_name' => $_PUT['product_name'] ?: null,
+            'product_desc' => $_PUT['product_desc'] ?: null,
+            'product_price' => $_PUT['product_price'] ?: null,
+            'product_version' => $_PUT['product_version'] ?: null
         ];
 
         $productData = $this->validateProduct($inputData);

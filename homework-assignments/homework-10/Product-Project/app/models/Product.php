@@ -27,7 +27,7 @@ class Product extends Model {
     }
 
     public function updateProduct($inputData){
-        $query = "update products set product_name = :product_name, product_desc = :product_desc, product_price = :product_price, product_version = :product_version where id = :id";
+        $query = "update products set product_name = :product_name, product_desc = :product_desc, product_price = :product_price, product_version = :product_version where product_id = :product_id";
         return $this->query($query, $inputData);
     }
 

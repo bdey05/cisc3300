@@ -52,9 +52,14 @@ if ($uri === '/new-product' && $_SERVER['REQUEST_METHOD'] === 'GET') {
     $productController->productsAddView();
 }
 
-if ($uriArray[1] === 'update-product' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+if ($uriArray[1] === 'update' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+    $id = isset($uriArray[2]) ? intval($uriArray[2]) : null;
     $productController = new ProductController();
-    $productController->productsUpdateView();
+
+    if ($id) {
+        $productController->productsUpdateView();
+    }
+   
 }
 
 if ($uriArray[1] === 'delete-product' && $_SERVER['REQUEST_METHOD'] === 'GET') {
